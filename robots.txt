@@ -1,0 +1,10 @@
+# Veridian Group Limited — robots.txt
+# Allow all reputable crawlers full access to the public site.
+
+User-agent: *
+Allow: /
+
+# Block nothing public; the site has no private areas.
+# (If you later add staging or admin paths, disallow them here.)
+
+Sitemap: https://veridian.ng/sitemap.xml

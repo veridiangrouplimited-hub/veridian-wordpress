@@ -2,7 +2,7 @@
    Veridian Limited — script.js
    Mobile nav · theme toggle · scroll behaviour · reveal-on-scroll
    Animated counters · FAQ accordion · contact form · newsletter
-   Interactive mini-audit tool · cookie banner · year stamp
+   Interactive mini-audit tool · year stamp
    ========================================================================== */
 
 (function () {
@@ -24,7 +24,6 @@
     personalizeForCampaign();
     contactForm();
     newsletterForm();
-    cookieBanner();
     blogFilters();
     hydratePost();
     fetchCaseStudies();
@@ -421,35 +420,6 @@
     });
   }
 
-  /* ===== Cookie banner ===== */
-  function cookieBanner() {
-    var banner = document.querySelector("#cookie-banner");
-    if (!banner) return;
-    var KEY = "veridian-cookie";
-    if (localStorage.getItem(KEY)) return;
-
-    var wa = document.querySelector(".whatsapp-float");
-
-    function showBanner() {
-      banner.classList.add("show");
-      if (wa) wa.style.bottom = "140px";
-    }
-    function hideBanner() {
-      banner.classList.remove("show");
-      if (wa) wa.style.bottom = "";
-    }
-
-    setTimeout(showBanner, 1500);
-
-    banner.querySelector(".cookie-accept").addEventListener("click", function () {
-      localStorage.setItem(KEY, "accepted");
-      hideBanner();
-    });
-    banner.querySelector(".cookie-decline").addEventListener("click", function () {
-      localStorage.setItem(KEY, "declined");
-      hideBanner();
-    });
-  }
   /* ===== Blog category filter ===== */
   function blogFilters() {
     var grid  = document.querySelector(".blog-grid");

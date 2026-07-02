@@ -1576,41 +1576,6 @@ select {
 }
 
 
-/* =================== 23. COOKIE BANNER =================== */
-.cookie-banner {
-  position: fixed;
-  bottom: var(--s-4); left: var(--s-4); right: var(--s-4);
-  max-width: 460px;
-  margin: 0 auto;
-  background: var(--white);
-  border: 1px solid var(--hairline-2);
-  border-radius: var(--radius-lg);
-  padding: var(--s-5);
-  box-shadow: var(--shadow-lg);
-  z-index: 95;
-  transform: translateY(120%);
-  transition: transform var(--t-slow) var(--ease);
-}
-.cookie-banner.show { transform: translateY(0); }
-.cookie-banner h4 { font-size: 1rem; margin-bottom: var(--s-2); font-family: var(--font-body); font-weight: 600; }
-.cookie-banner p { font-size: .85rem; margin: 0 0 var(--s-4); color: var(--muted); }
-.cookie-actions { display: flex; gap: var(--s-2); }
-.cookie-actions button {
-  flex: 1;
-  font-size: .85rem;
-  padding: var(--s-2) var(--s-4);
-  border-radius: 999px;
-  font-weight: 600;
-  border: 1.5px solid;
-  cursor: pointer;
-  transition: all var(--t-fast);
-}
-.cookie-actions .cookie-accept { background: var(--ink); color: var(--bone); border-color: var(--ink); }
-.cookie-actions .cookie-decline { background: transparent; color: var(--ink); border-color: var(--hairline-2); }
-.cookie-actions .cookie-accept:hover { background: var(--terracotta); border-color: var(--terracotta); }
-.cookie-actions .cookie-decline:hover { border-color: var(--ink); }
-
-
 /* =================== 24. ANIMATIONS =================== */
 .reveal {
   opacity: 0;

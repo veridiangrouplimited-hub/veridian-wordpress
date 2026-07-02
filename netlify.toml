@@ -22,6 +22,21 @@
 [build.processing.images]
   compress = true
 
+# First-party proxy for Umami analytics.
+# Blocklists (EasyPrivacy, Opera's built-in blocker) match the
+# cloud.umami.is hostname; serving the script and beacon endpoint from
+# our own domain means those rules never fire. Cookieless, no personal
+# data — disclosed in the privacy policy.
+[[redirects]]
+  from = "/veridian-edge.js"
+  to = "https://cloud.umami.is/script.js"
+  status = 200
+
+[[redirects]]
+  from = "/va/api/send"
+  to = "https://cloud.umami.is/api/send"
+  status = 200
+
 # Sensible headers
 [[headers]]
   for = "/*"

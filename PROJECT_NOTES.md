@@ -150,7 +150,7 @@ means the existing 7 won't be duplicated.
   — if the live Netlify domain differs, this needs a global find/replace)
 - **Phone/WhatsApp:** +234 813 098 6851
 - **Email:** hello@veridian.ng (Zoho Mail)
-- **Socials:** Instagram & TikTok `@veridiangrouplimited`, X `@veridian_ng`
+- **Socials:** Instagram `@veridian_ng`, TikTok `@veridianlimited`, X `@veridian_ng`
 - **Payment terms:** 50% on start, 50% on delivery — deliberately kept this
   way; a request to change it to 70/30 was talked through and declined as
   bad positioning for a new practice with no track record yet.

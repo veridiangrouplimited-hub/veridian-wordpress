@@ -1532,6 +1532,33 @@ select {
 }
 .footer-socials a:hover { background: var(--terracotta); color: var(--bone); border-color: var(--terracotta); transform: translateY(-2px); }
 
+.social-links { display: flex; gap: var(--s-3); align-items: center; flex-wrap: wrap; }
+.social-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-size: .88rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  padding: var(--s-2) var(--s-3) var(--s-2) var(--s-2);
+  border: 1.5px solid var(--hairline);
+  border-radius: var(--radius);
+  transition: all var(--t-fast);
+}
+.social-pill:hover { border-color: var(--terracotta); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+.social-pill-icon {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: var(--terracotta-tint);
+  color: var(--terracotta);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.social-pill:nth-child(2) .social-pill-icon { background: var(--sage-tint); color: var(--sage); }
+.social-pill:nth-child(3) .social-pill-icon { background: var(--mustard-tint); color: #8A6919; }
+
 .footer-col h5 {
   font-family: var(--font-mono);
   font-size: .75rem;

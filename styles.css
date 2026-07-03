@@ -626,9 +626,32 @@ select {
 
 
 /* =================== 8. STAT STRIP =================== */
-.stat-strip { padding: var(--s-7) 0; background: var(--ink); color: var(--bone); }
+/* Fixed dark band, deliberately theme-invariant (unlike var(--ink)/var(--bone),
+   which flip in dark mode and would otherwise turn this section near-unreadable). */
+.stat-strip { padding: var(--s-7) 0; background: #0E1A2E; color: #FBF7EE; }
+.stat-strip-eyebrow { text-align: center; margin-bottom: var(--s-6); }
+.eyebrow--stat {
+  color: var(--mustard-soft);
+  background: rgba(251,247,238,.08);
+  border: 1px solid rgba(251,247,238,.15);
+}
 .stat-strip-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s-6); }
-@media (max-width: 800px) { .stat-strip-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 800px) { .stat-strip-grid { grid-template-columns: repeat(2, 1fr); gap: var(--s-7) var(--s-6); } }
+.stat { position: relative; }
+.stat-strip-grid .stat:not(:first-child)::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--s-6) / -2);
+  top: 4px; bottom: 4px;
+  width: 1px;
+  background: rgba(251,247,238,.15);
+}
+@media (max-width: 800px) { .stat-strip-grid .stat::before { display: none; } }
+.stat-icon {
+  width: 28px; height: 28px;
+  color: var(--mustard-soft);
+  margin-bottom: var(--s-3);
+}
 .stat-num {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 5vw, 4rem);
@@ -638,7 +661,7 @@ select {
   letter-spacing: -.03em;
 }
 .stat-num sup { font-size: .5em; vertical-align: super; }
-.stat-label { font-size: .9rem; color: rgba(247,242,231,.7); margin-top: var(--s-3); max-width: 22ch; }
+.stat-label { font-size: .9rem; color: rgba(251,247,238,.7); margin-top: var(--s-3); max-width: 22ch; }
 
 
 /* =================== 9. INDUSTRIES =================== */

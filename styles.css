@@ -14,7 +14,7 @@
   --white:       #FFFFFF;
   --ink:         #0E1A2E;
   --graphite:    #344155;
-  --muted:       #6E7588;
+  --muted:       #646B7E; /* ≥4.5:1 on bone/cream/white (WCAG AA body text) */
   --soft:        #F2EAD6;
   --hairline:    #E4DCC4;
   --hairline-2:  #D0C7AC;
@@ -84,7 +84,7 @@
   --white:       #1A2C50;
   --ink:         #F1EDDF;
   --graphite:    #C8C2B2;
-  --muted:       #8E8A82;
+  --muted:       #9C9890; /* ≥4.5:1 on dark card bg #1A2C50 */
   --soft:        #1F2E54;
   --hairline:    #2A3A60;
   --hairline-2:  #3A4A70;
@@ -158,7 +158,7 @@ strong { color: var(--ink); font-weight: 600; }
   border-radius: 999px;
 }
 .eyebrow--sage    { color: var(--sage); background: var(--sage-tint); }
-.eyebrow--mustard { color: #8A6919; background: var(--mustard-tint); }
+.eyebrow--mustard { color: #7A5C13; background: var(--mustard-tint); }
 .eyebrow--berry   { color: var(--berry); background: var(--berry-tint); }
 
 .section-title {
@@ -1512,7 +1512,9 @@ select {
   gap: var(--s-7);
   margin-bottom: var(--s-8);
 }
-@media (max-width: 800px) {
+/* Collapse at 1000px, not 800px — five columns squeeze the newsletter
+   input below usable width (~40px) anywhere under ~1000px. */
+@media (max-width: 1000px) {
   .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--s-6); }
   .footer-brand, .footer-newsletter-mini { grid-column: 1 / -1; }
 }
@@ -1604,6 +1606,9 @@ select {
   color: var(--muted);
 }
 .footer-links { display: flex; align-items: center; gap: var(--s-3); flex-wrap: wrap; }
+/* Padding brings the small legal links up to the 24px WCAG 2.2 minimum
+   tap-target height without changing their visual size. */
+.footer-links a { display: inline-block; padding: var(--s-1) 0; }
 .footer-links a:hover { color: var(--terracotta); }
 
 
@@ -1671,7 +1676,9 @@ select {
 
 
 /* =================== 25. RESPONSIVE =================== */
-@media (max-width: 1000px) {
+/* 1100px, not 1000px: with eight nav links the desktop nav wraps to two
+   lines between ~1000–1090px (e.g. iPad landscape at 1024px). */
+@media (max-width: 1100px) {
   .site-nav {
     position: fixed;
     top: 0; right: 0;
@@ -1722,6 +1729,14 @@ select {
 @media (max-width: 600px) {
   .section-title { font-size: 2rem; }
   .hero-headline { font-size: 2.6rem; }
+}
+/* Very narrow screens (≤480px): long button labels ("Request a free
+   snapshot") are wider than the space left inside padded cards and blow
+   the layout out sideways — let them wrap instead. */
+@media (max-width: 480px) {
+  .btn { white-space: normal; text-align: center; }
+  .audit-cta { padding: var(--s-6) var(--s-4); }
+  .audit-cta-action { padding: var(--s-5) var(--s-4); }
 }
 
 

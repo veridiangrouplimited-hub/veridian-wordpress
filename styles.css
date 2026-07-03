@@ -1205,17 +1205,35 @@ select {
 
 .cred-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: var(--s-3);
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--s-4);
   margin-top: var(--s-5);
 }
 .cred-item {
-  padding: var(--s-4);
+  padding: var(--s-5) var(--s-4);
   background: var(--white);
   border: 1px solid var(--hairline);
   border-radius: var(--radius);
   text-align: center;
+  transition: all var(--t-fast);
 }
+.cred-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+  border-color: var(--terracotta);
+}
+.cred-item-icon {
+  width: 36px; height: 36px;
+  margin: 0 auto var(--s-3);
+  border-radius: var(--radius-sm);
+  background: var(--terracotta-tint);
+  color: var(--terracotta);
+  display: grid;
+  place-items: center;
+}
+.cred-item:nth-child(2) .cred-item-icon { background: var(--sage-tint); color: var(--sage); }
+.cred-item:nth-child(3) .cred-item-icon { background: var(--mustard-tint); color: #8A6919; }
+.cred-item:nth-child(4) .cred-item-icon { background: var(--berry-tint); color: var(--berry); }
 .cred-item-num {
   font-family: var(--font-display);
   font-size: 1.8rem;
